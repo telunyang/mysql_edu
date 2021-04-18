@@ -1,1 +1,2 @@
-"# mysql_edu" 
+# mysql_edu
+MySQL / MariaDB 上機練習教材
