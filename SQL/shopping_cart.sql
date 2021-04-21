@@ -3,13 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-04-18 18:25:44
+-- 產生時間： 2021-04-21 20:10:50
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+08:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -172,10 +172,10 @@ CREATE TABLE `users` (
   `pwd` char(40) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '使用者密碼',
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '姓名',
   `gender` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '性別',
-  `phoneNumber` int(11) NOT NULL COMMENT '手機號碼',
-  `birthday` datetime NOT NULL COMMENT '出生年月日',
+  `phoneNumber` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '手機號碼',
+  `birthday` date NOT NULL COMMENT '出生年月日',
   `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '地址',
-  `isActivated` tinyint(1) NOT NULL DEFAULT 0 COMMENT '開通狀況',
+  `isActivated` tinyint(1) NOT NULL DEFAULT 1 COMMENT '開通狀況',
   `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='使用者資料表';
