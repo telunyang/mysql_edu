@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-04-18 18:20:57
+-- 產生時間： 2021-04-21 20:10:20
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -37,13 +37,6 @@ CREATE TABLE `admin` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='管理者帳號';
 
---
--- 傾印資料表的資料 `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `pwd`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '2019-12-05 00:43:04', '2019-12-05 00:43:04');
-
 -- --------------------------------------------------------
 
 --
@@ -62,18 +55,6 @@ CREATE TABLE `students` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新時間'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='學生資料表';
-
---
--- 傾印資料表的資料 `students`
---
-
-INSERT INTO `students` (`id`, `studentId`, `studentName`, `studentGender`, `studentBirthday`, `studentPhoneNumber`, `studentDescription`, `studentImg`, `created_at`, `updated_at`) VALUES
-(2, 'S001', '陳同學', '女', '1995-02-21', '0911111111', '你好，我是陳同學…\r\n請多指教…', NULL, '2019-12-06 00:37:09', '2019-12-10 18:52:53'),
-(3, 'S002', '王同學', '男', '1996-03-22', '0922222222', '你好，我是王同學…\r\n請多指教…', NULL, '2019-12-08 21:33:36', '2019-12-10 18:52:55'),
-(7, 'S003', '江同學', '女', '2000-07-25', '0966666666', '你好，我是江同學…\r\n請多指教…', NULL, '2019-12-08 22:02:24', '2019-12-10 18:52:58'),
-(8, 'S004', '周同學', '男', '2001-08-26', '0977777777', '你好，我是周同學…\r\n請多指教…', NULL, '2019-12-08 22:02:57', '2019-12-10 18:53:01'),
-(9, 'S005', '劉同學', '男', '2002-09-27', '0988888888', '你好，我是劉同學…\r\n請多指教…', NULL, '2019-12-08 22:03:48', '2019-12-10 18:53:03'),
-(18, 'S006', '張同學', '女', '1995-07-13', '0987666555', '你好，我是張同學…\r\n請多指教…', NULL, '2019-12-10 18:41:50', '2019-12-10 18:53:04');
 
 --
 -- 已傾印資料表的索引
@@ -100,13 +81,13 @@ ALTER TABLE `students`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號';
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號';
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
