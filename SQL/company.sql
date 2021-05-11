@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-04-23 13:25:57
+-- 產生時間： 2021-05-10 16:46:13
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `company`
 --
-CREATE DATABASE IF NOT EXISTS `company` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `company`;
 
 -- --------------------------------------------------------
 
@@ -114,7 +112,7 @@ CREATE TABLE `employee` (
   `Bdate` date DEFAULT NULL,
   `Address` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Sex` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Salary` decimal(10,2) DEFAULT NULL,
+  `Salary` int(11) DEFAULT NULL,
   `Super_ssn` char(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Dno` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp() COMMENT '新增時間',
@@ -126,14 +124,14 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`Fname`, `Minit`, `Lname`, `Ssn`, `Bdate`, `Address`, `Sex`, `Salary`, `Super_ssn`, `Dno`, `created_at`, `updated_at`) VALUES
-('John', 'B', 'Smith', '123456789', '1965-01-09', '731 Fondren, Houston, TX', 'M', '30000.00', '333445555', 5, '2019-12-02 21:11:36', '2019-12-02 21:11:36'),
-('Franklin', 'T', 'Wong', '333445555', '1955-12-08', '638 Voss, houston, TX', 'M', '40000.00', '888665555', 5, '2019-12-02 21:14:28', '2019-12-02 21:14:28'),
-('Joyce', 'A', 'English', '453453453', '1972-07-31', '5631 Rice, Houston, TX', 'F', '25000.00', '333445555', 5, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
-('Ramesh', 'K', 'Narayan', '666884444', '1962-09-15', '975 Fire Oak, Humble, TX', 'M', '38000.00', '333445555', 5, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
-('James', 'E', 'Borg', '888665555', '1937-11-10', '450 Stone, Houston, TX', 'M', '55000.00', NULL, 1, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
-('Jennifer', 'S', 'Wallace', '987654321', '1941-06-20', '291 Berry, Bellaire, TX', 'F', '43000.00', '888665555', 4, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
-('Ahmad', 'V', 'Jabbar', '987987987', '1969-03-29', '980 Dallas, Houston, TX', 'M', '25000.00', '987654321', 4, '2019-12-02 21:22:14', '2021-04-18 20:31:12'),
-('Alicia', 'J', 'Zelaya', '999887777', '1968-01-19', '3321 Castle, Spring, TX', 'F', '25000.00', '987654321', 4, '2019-12-02 21:14:28', '2019-12-02 21:14:28');
+('John', 'B', 'Smith', '123456789', '1965-01-09', '731 Fondren, Houston, TX', 'M', 30000, '333445555', 5, '2019-12-02 21:11:36', '2019-12-02 21:11:36'),
+('Franklin', 'T', 'Wong', '333445555', '1955-12-08', '638 Voss, houston, TX', 'M', 40000, '888665555', 5, '2019-12-02 21:14:28', '2019-12-02 21:14:28'),
+('Joyce', 'A', 'English', '453453453', '1972-07-31', '5631 Rice, Houston, TX', 'F', 25000, '333445555', 5, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
+('Ramesh', 'K', 'Narayan', '666884444', '1962-09-15', '975 Fire Oak, Humble, TX', 'M', 38000, '333445555', 5, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
+('James', 'E', 'Borg', '888665555', '1937-11-10', '450 Stone, Houston, TX', 'M', 55000, NULL, 1, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
+('Jennifer', 'S', 'Wallace', '987654321', '1941-06-20', '291 Berry, Bellaire, TX', 'F', 43000, '888665555', 4, '2019-12-02 21:22:14', '2019-12-02 21:22:14'),
+('Ahmad', 'V', 'Jabbar', '987987987', '1969-03-29', '980 Dallas, Houston, TX', 'M', 25000, '987654321', 4, '2019-12-02 21:22:14', '2021-04-18 20:31:12'),
+('Alicia', 'J', 'Zelaya', '999887777', '1968-01-19', '3321 Castle, Spring, TX', 'F', 25000, '987654321', 4, '2019-12-02 21:14:28', '2019-12-02 21:14:28');
 
 -- --------------------------------------------------------
 
